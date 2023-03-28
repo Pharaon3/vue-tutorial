@@ -4,10 +4,7 @@
     <ToDoForm />
     <ul>
       <li v-for="item in ToDoItems" :key="item.id">
-        <ToDoItem 
-          :id="item.id"
-          :label="item.label" 
-          :done="item.done" />
+        <ToDoItem :id="item.id" :label="item.label" :done="item.done" />
       </li>
     </ul>
   </div>
@@ -23,14 +20,14 @@ export default {
   components: {
     ToDoItem,
     ToDoForm
-},
+  },
   data() {
     return {
       ToDoItems: [
-        {id: uniqueId("todo-"), label: "Learn Vue", done: false},
-        {id: uniqueId("todo-"), label: "Create a Vue project with the CLI", done: true },
-        {id: uniqueId("todo-"), label: "Have fun", done: true },
-        {id: uniqueId("todo-"), label: "Create a to-do list", done: false},
+        { id: uniqueId("todo-"), label: "Learn Vue", done: false },
+        { id: uniqueId("todo-"), label: "Create a Vue project with the CLI", done: true },
+        { id: uniqueId("todo-"), label: "Have fun", done: true },
+        { id: uniqueId("todo-"), label: "Create a to-do list", done: false },
       ]
     }
   }
