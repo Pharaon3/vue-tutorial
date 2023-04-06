@@ -7,6 +7,7 @@
         <ToDoItem :id="item.id" :label="item.label" :done="item.done" />
       </li>
     </ul>
+    <h2>{{ ToDoItems.filter(item => item.done).length }} items completed out of {{ ToDoItems.length }}. </h2>
   </div>
 </template>
 
