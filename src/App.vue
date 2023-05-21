@@ -1,34 +1,45 @@
 <template>
   <div id="app">
-    <h1>To-Do List</h1>
-    <ToDoForm :plabel="newLabel" @todo-added="addToDo" />
+    <h1>EZ LIVE</h1>
+    <!-- <ToDoForm :plabel="newLabel" @todo-added="addToDo" /> -->
     <ul>
       <li v-for="item in ToDoItems" :key="item.id">
-        <ToDoItem :id="item.id" :label="item.label" :done="item.done" />
+        <ThreeWay :id="item.id" :label="item.label"  :leftTitle="item.leftTitle"  :middleTitle="item.middleTitle"  :rightTitle="item.rightTitle"  :leftAmount="item.leftAmount"  :middleAmount="item.middleAmount"  :rightAmount="item.rightAmount" :done="item.done" />
+      </li>
+      <li v-for="item in ToDoItems" :key="item.id">
+        <ThreeWayTable :id="item.id" :label="item.label"  :leftTitle="item.leftTitle"  :middleTitle="item.middleTitle"  :rightTitle="item.rightTitle"  :leftAmount="item.leftAmount"  :middleAmount="item.middleAmount"  :rightAmount="item.rightAmount" :done="item.done" />
       </li>
     </ul>
-    <h2>{{ ToDoItems.filter(item => item.done).length }} items completed out of {{ ToDoItems.length }}. </h2>
+    <!-- <h2>{{ ToDoItems.filter(item => item.done).length }} items completed out of {{ ToDoItems.length }}. </h2> -->
   </div>
 </template>
 
 <script>
-import ToDoItem from "./components/ToDoItem.vue";
+// import ToDoItem from "./components/ToDoItem.vue";
 import uniqueId from "lodash.uniqueid";
-import ToDoForm from "./components/ToDoForm.vue";
+// import ToDoForm from "./components/ToDoForm.vue";
+import ThreeWay from './components/ThreeWay.vue'
+import ThreeWayTable from './components/ThreeWayTable.vue'
 
 export default {
   name: 'App',
   components: {
-    ToDoItem,
-    ToDoForm
+    // ToDoItem,
+    // ToDoForm,
+    ThreeWay,
+    ThreeWayTable,
   },
   data() {
     return {
       ToDoItems: [
-        { id: uniqueId("todo-"), label: "Learn Vue", done: false },
-        { id: uniqueId("todo-"), label: "Create a Vue project with the CLI", done: true },
-        { id: uniqueId("todo-"), label: "Have fun", done: true },
-        { id: uniqueId("todo-"), label: "Create a to-do list", done: false },
+        { id: uniqueId("todo-"), label: "Money Line 3-way", leftTitle: "HOME", middleTitle: "TIE", rightTitle: "AWAY", leftAmount: "+1200", middleAmount: "800", rightAmount: "-200", done: false },
+        { id: uniqueId("todo-"), label: "Double Chance", leftTitle: "HOME", middleTitle: "TIE", rightTitle: "AWAY", leftAmount: "+1200", middleAmount: "800", rightAmount: "-200", done: false },
+        { id: uniqueId("todo-"), label: "Match Goals", leftTitle: "HOME", middleTitle: "TIE", rightTitle: "AWAY", leftAmount: "+1200", middleAmount: "800", rightAmount: "-200", done: false },
+        { id: uniqueId("todo-"), label: "Alternative Match Goals", leftTitle: "HOME", middleTitle: "TIE", rightTitle: "AWAY", leftAmount: "+1200", middleAmount: "800", rightAmount: "-200", done: false },
+        // { id: uniqueId("todo-"), label: "Double Chance", done: true },
+        // { id: uniqueId("todo-"), label: "Match Goals", done: true },
+        // { id: uniqueId("todo-"), label: "Alternative Match Goals", done: false },
+        // { id: uniqueId("todo-"), label: "Match Corners", done: false },
       ],
       newLabel: "",
     }
@@ -49,8 +60,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #eee;
   margin-top: 60px;
+  background-color: #111;
 }
 </style>
 <style>
@@ -134,7 +146,7 @@ export default {
   }
   /* End global styles */
   #app {
-    background: #fff;
+    /* background: #fff; */
     margin: 2rem 0 4rem 0;
     padding: 1rem;
     padding-top: 0;
@@ -147,7 +159,7 @@ export default {
     }
   }
   #app > * {
-    max-width: 50rem;
+    /* max-width: 50rem; */
     margin-left: auto;
     margin-right: auto;
   }

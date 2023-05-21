@@ -3,7 +3,7 @@
       <input type="checkbox" :id="id" :checked="isDone" class="checkbox" />
       <label :for="id" class="checkbox-label">{{label}}</label>
     </div> -->
-    <section id="threeway">
+    <section :id="id" >
     <v-container fluid>
       <div class="divider colorgreen" />
       <v-row align="center" justify="center">
