@@ -14,9 +14,17 @@
           <div class="roundButton whiteButton"> Sign Up </div>
         </div>
       </div>
-      <div class="cards flex">
+      <div class="cards flex" style="justify-content: first baseline;">
         <div class="card">
-          <h2> Get Up to a 100% boost </h2>
+          <h4> Get Up to a 100% boost </h4>
+          <p> Earn bigger boosts for each MLB SGP leg added! </p>
+        </div>
+        <div class="card">
+          <h4> Get Up to a 100% boost </h4>
+          <p> Earn bigger boosts for each MLB SGP leg added! </p>
+        </div>
+        <div class="card">
+          <h4> Get Up to a 100% boost </h4>
           <p> Earn bigger boosts for each MLB SGP leg added! </p>
         </div>
       </div>
@@ -39,6 +47,29 @@ export default {
 };
 </script>
 <style>
+.main-table-roundButton {
+  padding: 7px 20px;
+  cursor: pointer;
+  color: #888;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-style: solid;
+  border-radius: 40px;
+  border-color: #888; 
+  margin: 5px;
+}
+.main-table-roundButton:hover {
+  color: #eee;
+  border-color: #eee;
+}
+.main-table-header {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #888;
+}
+.main-table-header:hover {
+  color: #eee;
+}
 .cards {
   justify-content: flex-start;
 }

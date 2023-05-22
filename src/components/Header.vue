@@ -86,7 +86,7 @@
     cursor: pointer;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 3px;
+    padding-top: 7px;
     padding-bottom: 3px;
   }
   .header-bot-titles div:hover{
