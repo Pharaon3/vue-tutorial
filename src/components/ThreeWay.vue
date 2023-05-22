@@ -1,70 +1,79 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <!-- <div class="custom-checkbox">
+  <!-- <div class="custom-checkbox">
       <input type="checkbox" :id="id" :checked="isDone" class="checkbox" />
       <label :for="id" class="checkbox-label">{{label}}</label>
     </div> -->
-    <section :id="id" >
+  <section :id="id">
     <v-container fluid>
       <div class="divider colorgreen" />
       <v-row align="center" justify="center">
         <v-col cols="12">
           <h3 class="font-weight-light leftAlign titleClass">
-            {{label}}
+            {{ label }}
           </h3>
         </v-col>
       </v-row>
       <div class="divider" />
-      <v-row align="center" justify="center" style="display: flex; justify-content: space-around; align-items: center;">
+      <v-row
+        align="center"
+        justify="center"
+        style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        "
+      >
         <v-col cols="12" md="4" class="col-12 col-md-4 eachBetButton">
           <h5 class="font-weight-light">
-            {{leftTitle}}
+            {{ leftTitle }}
           </h5>
           <p class="font-weight-light color">
-            {{leftAmount}}
+            {{ leftAmount }}
           </p>
         </v-col>
         <div class="verticalDivider" />
         <v-col cols="12" md="4" class="eachBetButton">
           <h5 class="font-weight-light">
-            {{middleTitle}}
+            {{ middleTitle }}
           </h5>
           <p class="font-weight-light color">
-            {{middleAmount}}
+            {{ middleAmount }}
           </p>
         </v-col>
         <div class="verticalDivider" />
         <v-col cols="12" md="4" class="eachBetButton">
           <h5 class="font-weight-light">
-            {{rightTitle}}
+            {{ rightTitle }}
           </h5>
           <p class="font-weight-light color">
-            {{rightAmount}}
+            {{ rightAmount }}
           </p>
-        </v-col> 
+        </v-col>
       </v-row>
       <div class="divider colorgreen" />
     </v-container>
   </section>
-  </template>
-  
+</template>
+
 <script>
 export default {
-    props: {
-        label: { required: true, type: String },
-        leftTitle: { required: true, type: String },
-        middleTitle: { required: true, type: String },
-        rightTitle: { required: true, type: String },
-        leftAmount: { required: true, type: String },
-        middleAmount: { required: true, type: String },
-        rightAmount: { required: true, type: String },
-        // done: { default: false, type: Boolean },
-        // id: { required: true, type: String },
-    },
-    data() {
-        return {
-            // isDone: this.done,
-        }
-    }
+  props: {
+    label: { required: true, type: String },
+    leftTitle: { required: true, type: String },
+    middleTitle: { required: true, type: String },
+    rightTitle: { required: true, type: String },
+    leftAmount: { required: true, type: String },
+    middleAmount: { required: true, type: String },
+    rightAmount: { required: true, type: String },
+    // done: { default: false, type: Boolean },
+    // id: { required: true, type: String },
+  },
+  data() {
+    return {
+      // isDone: this.done,
+    };
+  },
 };
 </script>
 <style scoped>
@@ -72,7 +81,6 @@ export default {
   width: 1px;
   height: 30px;
   background-color: grey;
-
 }
 .titleClass {
   cursor: pointer;
@@ -92,7 +100,7 @@ export default {
   background-color: #777;
   margin: auto;
 }
-.colorgreen{
+.colorgreen {
   background-color: green;
   width: 99%;
 }
@@ -102,18 +110,17 @@ section {
   margin: auto;
 }
 .eachBetButton {
-  display: flex; 
-  width: 33%; 
-  justify-content: 
-  space-between;
-/*  max-width: 200px;*/
+  display: flex;
+  width: 33%;
+  justify-content: space-between;
+  /*  max-width: 200px;*/
   cursor: pointer;
   padding: 10px;
   padding-left: 30px;
   padding-right: 30px;
   font-size: 14px;
 }
-.eachBetButton:hover{
+.eachBetButton:hover {
   background-color: #aaa;
 }
 .color {
@@ -231,5 +238,4 @@ section {
     line-height: 1.31579;
   }
 }
-
 </style>

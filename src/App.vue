@@ -2,21 +2,38 @@
   <div id="app">
     <!-- <h1 class="header">EZ <span style="color: yellow;">LIVE</span></h1> -->
     <!-- <ToDoForm :plabel="newLabel" @todo-added="addToDo" /> -->
+    <Header id="header" />
     <div class="row">
-      <div class="col-4">
+      <div style="width: 15%">
         <SideBar id="sidebar" />
       </div>
-      <ul class="col-4">
-        <li v-for="item in ToDoItems" :key="item.id">
-          <ThreeWay :id="item.id" :label="item.label"  :leftTitle="item.leftTitle"  :middleTitle="item.middleTitle"  :rightTitle="item.rightTitle"  :leftAmount="item.leftAmount"  :middleAmount="item.middleAmount"  :rightAmount="item.rightAmount" :done="item.done" />
-        </li>
-        <li v-for="item in ThreeWayTables" :key="item.id">
-          <ThreeWayTable :id="item.id" :title="item.title" :currentCorners="item.currentCorners" :corners="JSON.stringify(item.corners)" />
-        </li>
-      </ul>
-      <div class="col-4">
-        <Sidebar id="sidebar1" />
+      <div style="width: 55%">
+        <MainPage id="mainpage"/>
+        <!-- <ul class="col-4">
+          <li v-for="item in ToDoItems" :key="item.id">
+            <ThreeWay
+              :id="item.id"
+              :label="item.label"
+              :leftTitle="item.leftTitle"
+              :middleTitle="item.middleTitle"
+              :rightTitle="item.rightTitle"
+              :leftAmount="item.leftAmount"
+              :middleAmount="item.middleAmount"
+              :rightAmount="item.rightAmount"
+              :done="item.done"
+            />
+          </li>
+          <li v-for="item in ThreeWayTables" :key="item.id">
+            <ThreeWayTable
+              :id="item.id"
+              :title="item.title"
+              :currentCorners="item.currentCorners"
+              :corners="JSON.stringify(item.corners)"
+            />
+          </li>
+        </ul> -->
       </div>
+      <div style="width: 30%"></div>
     </div>
     <!-- <h2>{{ ToDoItems.filter(item => item.done).length }} items completed out of {{ ToDoItems.length }}. </h2> -->
   </div>
@@ -26,65 +43,108 @@
 // import ToDoItem from "./components/ToDoItem.vue";
 import uniqueId from "lodash.uniqueid";
 // import ToDoForm from "./components/ToDoForm.vue";
-import ThreeWay from './components/ThreeWay.vue';
-import ThreeWayTable from './components/ThreeWayTable.vue';
-import SideBar from './components/SideBar.vue';
+// import ThreeWay from "./components/ThreeWay.vue";
+// import ThreeWayTable from "./components/ThreeWayTable.vue";
+import SideBar from "./components/SideBar.vue";
+import MainPage from "./components/MainPage.vue";
+import Header from "./components/Header.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    // ToDoItem,
-    // ToDoForm,
-    ThreeWay,
-    ThreeWayTable,
+    // ThreeWay,
+    // ThreeWayTable,
     SideBar,
+    MainPage,
+    Header,
   },
   data() {
     return {
       ToDoItems: [
-        { id: uniqueId("todo-"), label: "Money Line 3-way", leftTitle: "HOME", middleTitle: "TIE", rightTitle: "AWAY", leftAmount: "+1200", middleAmount: "800", rightAmount: "-200", done: false },
-        { id: uniqueId("todo-"), label: "Double Chance", leftTitle: "HOME", middleTitle: "TIE", rightTitle: "AWAY", leftAmount: "+1200", middleAmount: "800", rightAmount: "-200", done: false },
-        { id: uniqueId("todo-"), label: "Match Goals", leftTitle: "HOME", middleTitle: "TIE", rightTitle: "AWAY", leftAmount: "+1200", middleAmount: "800", rightAmount: "-200", done: false },
-        { id: uniqueId("todo-"), label: "Alternative Match Goals", leftTitle: "HOME", middleTitle: "TIE", rightTitle: "AWAY", leftAmount: "+1200", middleAmount: "800", rightAmount: "-200", done: false },
+        {
+          id: uniqueId("todo-"),
+          label: "Money Line 3-way",
+          leftTitle: "HOME",
+          middleTitle: "TIE",
+          rightTitle: "AWAY",
+          leftAmount: "+1200",
+          middleAmount: "800",
+          rightAmount: "-200",
+          done: false,
+        },
+        {
+          id: uniqueId("todo-"),
+          label: "Double Chance",
+          leftTitle: "HOME",
+          middleTitle: "TIE",
+          rightTitle: "AWAY",
+          leftAmount: "+1200",
+          middleAmount: "800",
+          rightAmount: "-200",
+          done: false,
+        },
+        {
+          id: uniqueId("todo-"),
+          label: "Match Goals",
+          leftTitle: "HOME",
+          middleTitle: "TIE",
+          rightTitle: "AWAY",
+          leftAmount: "+1200",
+          middleAmount: "800",
+          rightAmount: "-200",
+          done: false,
+        },
+        {
+          id: uniqueId("todo-"),
+          label: "Alternative Match Goals",
+          leftTitle: "HOME",
+          middleTitle: "TIE",
+          rightTitle: "AWAY",
+          leftAmount: "+1200",
+          middleAmount: "800",
+          rightAmount: "-200",
+          done: false,
+        },
         // { id: uniqueId("todo-"), label: "Double Chance", done: true },
         // { id: uniqueId("todo-"), label: "Match Goals", done: true },
         // { id: uniqueId("todo-"), label: "Alternative Match Goals", done: false },
         // { id: uniqueId("todo-"), label: "Match Corners", done: false },
       ],
       ThreeWayTables: [
-        { 
-          id: uniqueId("twt-"), 
-          title: "Match Corners", 
-          currentCorners: "4", 
-          corners:[
-            ['5', '-225', '260', '+700'],
-            ['6', '-235', '270', '+710'],
-            ['7', '-244', '280', '+720'],
-            ['8', '-255', '290', '+730'],
-            ],
+        {
+          id: uniqueId("twt-"),
+          title: "Match Corners",
+          currentCorners: "4",
+          corners: [
+            ["5", "-225", "260", "+700"],
+            ["6", "-235", "270", "+710"],
+            ["7", "-244", "280", "+720"],
+            ["8", "-255", "290", "+730"],
+          ],
         },
       ],
-    }
+    };
   },
   methods: {
     addToDo(toDoLabel) {
-      console.log("toDoLabel: ", toDoLabel)
-      this.ToDoItems.push({ id: uniqueId('todo-'), label: toDoLabel, done: false });
-    }
-    ,
+      console.log("toDoLabel: ", toDoLabel);
+      this.ToDoItems.push({
+        id: uniqueId("todo-"),
+        label: toDoLabel,
+        done: false,
+      });
+    },
   },
-}
+};
 </script>
 
 <style>
 .row {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-.header {
-  background-color: #58d7af;
-  text-align: left;
-  padding-left: 50px;
+.col-4 {
+  width: 33%;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -93,116 +153,14 @@ export default {
   text-align: center;
   color: #eee;
   margin-top: 60px;
-  background-color: #111;
+  background-color: #000;
 }
-</style>
-<style>
-  /* Global styles */
-  .btn {
-    padding: 0.8rem 1rem 0.7rem;
-    border: 0.2rem solid #4d4d4d;
-    cursor: pointer;
-    text-transform: capitalize;
-  }
-  .btn__danger {
-    color: #fff;
-    background-color: #ca3c3c;
-    border-color: #bd2130;
-  }
-  .btn__filter {
-    border-color: lightgrey;
-  }
-  .btn__danger:focus {
-    outline-color: #c82333;
-  }
-  .btn__primary {
-    color: #fff;
-    background-color: #000;
-  }
-  .btn-group {
-    display: flex;
-    justify-content: space-between;
-  }
-  .btn-group > * {
-    flex: 1 1 auto;
-  }
-  .btn-group > * + * {
-    margin-left: 0.8rem;
-  }
-  .label-wrapper {
-    margin: 0;
-    flex: 0 0 100%;
-    text-align: center;
-  }
-  [class*="__lg"] {
-    display: inline-block;
-    width: 100%;
-    font-size: 1.9rem;
-  }
-  [class*="__lg"]:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-  @media screen and (min-width: 620px) {
-    [class*="__lg"] {
-      font-size: 2.4rem;
-    }
-  }
-  .visually-hidden {
-    position: absolute;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px);
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: rect(1px, 1px, 1px, 1px);
-    white-space: nowrap;
-  }
-  [class*="stack"] > * {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .stack-small > * + * {
-    margin-top: 1.25rem;
-  }
-  .stack-large > * + * {
-    margin-top: 2.5rem;
-  }
-  @media screen and (min-width: 550px) {
-    .stack-small > * + * {
-      margin-top: 1.4rem;
-    }
-    .stack-large > * + * {
-      margin-top: 2.8rem;
-    }
-  }
-  /* End global styles */
-  #app {
-    /* background: #fff; */
-    margin: 2rem 0 4rem 0;
-    padding: 1rem;
-    padding-top: 0;
-    position: relative;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
-  }
-  @media screen and (min-width: 550px) {
-    #app {
-      padding: 4rem;
-    }
-  }
-  #app > * {
-    /* max-width: 50rem; */
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #app > form {
-    max-width: 100%;
-  }
-  /*#app h1 {
-    display: block;
-    min-width: 100%;
-    width: 100%;
-    text-align: center;
-    margin: 0;
-    margin-bottom: 1rem;
-  }*/
+#app {
+  /* background: #fff; */
+  margin: 2rem 0 4rem 0;
+  padding: 1rem;
+  padding-top: 0;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+}
 </style>
