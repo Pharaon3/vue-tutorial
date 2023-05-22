@@ -1,15 +1,23 @@
 <template>
   <div id="app">
-    <h1>EZ LIVE</h1>
+    <!-- <h1 class="header">EZ <span style="color: yellow;">LIVE</span></h1> -->
     <!-- <ToDoForm :plabel="newLabel" @todo-added="addToDo" /> -->
-    <ul>
-      <li v-for="item in ToDoItems" :key="item.id">
-        <ThreeWay :id="item.id" :label="item.label"  :leftTitle="item.leftTitle"  :middleTitle="item.middleTitle"  :rightTitle="item.rightTitle"  :leftAmount="item.leftAmount"  :middleAmount="item.middleAmount"  :rightAmount="item.rightAmount" :done="item.done" />
-      </li>
-      <li v-for="item in ToDoItems" :key="item.id">
-        <ThreeWayTable :id="item.id" :label="item.label"  :leftTitle="item.leftTitle"  :middleTitle="item.middleTitle"  :rightTitle="item.rightTitle"  :leftAmount="item.leftAmount"  :middleAmount="item.middleAmount"  :rightAmount="item.rightAmount" :done="item.done" />
-      </li>
-    </ul>
+    <div class="row">
+      <div class="col-4">
+        <SideBar id="sidebar" />
+      </div>
+      <ul class="col-4">
+        <li v-for="item in ToDoItems" :key="item.id">
+          <ThreeWay :id="item.id" :label="item.label"  :leftTitle="item.leftTitle"  :middleTitle="item.middleTitle"  :rightTitle="item.rightTitle"  :leftAmount="item.leftAmount"  :middleAmount="item.middleAmount"  :rightAmount="item.rightAmount" :done="item.done" />
+        </li>
+        <li v-for="item in ThreeWayTables" :key="item.id">
+          <ThreeWayTable :id="item.id" :title="item.title" :currentCorners="item.currentCorners" :corners="JSON.stringify(item.corners)" />
+        </li>
+      </ul>
+      <div class="col-4">
+        <Sidebar id="sidebar1" />
+      </div>
+    </div>
     <!-- <h2>{{ ToDoItems.filter(item => item.done).length }} items completed out of {{ ToDoItems.length }}. </h2> -->
   </div>
 </template>
@@ -18,8 +26,9 @@
 // import ToDoItem from "./components/ToDoItem.vue";
 import uniqueId from "lodash.uniqueid";
 // import ToDoForm from "./components/ToDoForm.vue";
-import ThreeWay from './components/ThreeWay.vue'
-import ThreeWayTable from './components/ThreeWayTable.vue'
+import ThreeWay from './components/ThreeWay.vue';
+import ThreeWayTable from './components/ThreeWayTable.vue';
+import SideBar from './components/SideBar.vue';
 
 export default {
   name: 'App',
@@ -28,6 +37,7 @@ export default {
     // ToDoForm,
     ThreeWay,
     ThreeWayTable,
+    SideBar,
   },
   data() {
     return {
@@ -41,7 +51,19 @@ export default {
         // { id: uniqueId("todo-"), label: "Alternative Match Goals", done: false },
         // { id: uniqueId("todo-"), label: "Match Corners", done: false },
       ],
-      newLabel: "",
+      ThreeWayTables: [
+        { 
+          id: uniqueId("twt-"), 
+          title: "Match Corners", 
+          currentCorners: "4", 
+          corners:[
+            ['5', '-225', '260', '+700'],
+            ['6', '-235', '270', '+710'],
+            ['7', '-244', '280', '+720'],
+            ['8', '-255', '290', '+730'],
+            ],
+        },
+      ],
     }
   },
   methods: {
@@ -55,6 +77,15 @@ export default {
 </script>
 
 <style>
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+.header {
+  background-color: #58d7af;
+  text-align: left;
+  padding-left: 50px;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -166,12 +197,12 @@ export default {
   #app > form {
     max-width: 100%;
   }
-  #app h1 {
+  /*#app h1 {
     display: block;
     min-width: 100%;
     width: 100%;
     text-align: center;
     margin: 0;
     margin-bottom: 1rem;
-  }
+  }*/
 </style>

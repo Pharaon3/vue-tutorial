@@ -14,7 +14,7 @@
         </v-col>
       </v-row>
       <div class="divider" />
-      <v-row align="center" justify="center" style="display: flex; justify-content: space-around;">
+      <v-row align="center" justify="center" style="display: flex; justify-content: space-around; align-items: center;">
         <v-col cols="12" md="4" class="col-12 col-md-4 eachBetButton">
           <h5 class="font-weight-light">
             {{leftTitle}}
@@ -23,6 +23,7 @@
             {{leftAmount}}
           </p>
         </v-col>
+        <div class="verticalDivider" />
         <v-col cols="12" md="4" class="eachBetButton">
           <h5 class="font-weight-light">
             {{middleTitle}}
@@ -31,6 +32,7 @@
             {{middleAmount}}
           </p>
         </v-col>
+        <div class="verticalDivider" />
         <v-col cols="12" md="4" class="eachBetButton">
           <h5 class="font-weight-light">
             {{rightTitle}}
@@ -66,6 +68,12 @@ export default {
 };
 </script>
 <style scoped>
+.verticalDivider {
+  width: 1px;
+  height: 30px;
+  background-color: grey;
+
+}
 .titleClass {
   cursor: pointer;
   padding: 10px;
