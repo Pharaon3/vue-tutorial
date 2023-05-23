@@ -25,7 +25,7 @@ export default {
 </script>
 <style>
 .mainpage {
-  background-color: #111;
+  background-color: #000;
   margin: 10px;
 }
 </style>

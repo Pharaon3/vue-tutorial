@@ -11,7 +11,7 @@
         </div>
       </div>
       <div>
-        <div class="header-titles">
+        <!-- <div class="header-titles">
             <div>Daily fantasy</div>
             <div>Sportbook</div>
             <div>casino</div>
@@ -19,7 +19,7 @@
             <div>reignmakers</div>
             <div>dk shop</div>
         </div>
-        <div class="divider" />
+        <div class="divider" /> -->
         <div class="header-bot-titles">
             <div>Home</div>
             <div>My Bets</div>
@@ -58,7 +58,7 @@
   }
   .header-bot-titles {
     display: flex;
-    padding-top: 2px;
+    padding-top: 10px;
   }
   .header-titles {
     display: flex;

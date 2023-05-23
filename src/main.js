@@ -4,6 +4,7 @@ import App from './App.vue'
 // import 'vuetify/dist/vuetify.min.css'
 
 import "./assets/reset.css";
+import '@fortawesome/fontawesome-free/css/all.css'
 
 const app = createApp(App)
 

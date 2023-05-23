@@ -15,14 +15,19 @@
       <div class="main-table-roundButton"> handball </div>
     </div>
   </div>
-  <div>
-
+  <div class="moneyLine">
+    Moneyline
+  </div>
+  <div class="moneyLine-table">
+    <Accordion id="accordion" />
   </div>
 </template>
 
 <script>
+import Accordion from './Accordion.vue';
 export default {
   components: {
+    Accordion,
   },
   props: {
     // label: { required: true, type: String },
@@ -35,6 +40,25 @@ export default {
 };
 </script>
 <style>
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 14px;
+}
+.moneyLine-table {
+  background-color: #222;
+  margin: 15px;
+  padding: 10px;
+  text-align: left;
+}
+.moneyLine {
+  background-color: #222;
+  padding: 15px;
+  margin: 15px;
+  text-align: left;
+}
 .mainTableHeader {
   margin-top: 30px;
   background-color: black;

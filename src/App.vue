@@ -33,7 +33,9 @@
           </li>
         </ul> -->
       </div>
-      <div style="width: 30%"></div>
+      <div style="width: 30%">
+        <BetSlip />
+      </div>
     </div>
     <!-- <h2>{{ ToDoItems.filter(item => item.done).length }} items completed out of {{ ToDoItems.length }}. </h2> -->
   </div>
@@ -48,6 +50,7 @@ import uniqueId from "lodash.uniqueid";
 import SideBar from "./components/SideBar.vue";
 import MainPage from "./components/MainPage.vue";
 import Header from "./components/Header.vue";
+import BetSlip from "./components/BetSlip.vue";
 
 export default {
   name: "App",
@@ -57,6 +60,7 @@ export default {
     SideBar,
     MainPage,
     Header,
+    BetSlip,
   },
   data() {
     return {
