@@ -13,14 +13,14 @@
       <div class="betcard">
         <div class="flex" style="align-items: baseline;">
           <div style="cursor: pointer;"><i class="fa fa-times" aria-hidden="true"></i></div>
-          <div style="text-align: left;">
+          <div style="text-align: left; padding-left: 10px;">
             <div class="betcard-header">Man City</div>
             <div>Moneyline</div>
             <div>Brighton vs Man City</div>
           </div>
         </div>
         <div class="flex" style="align-items: baseline;">
-          <div style="font-weight: bold;">-125</div>
+          <div style="font-weight: bold; padding-right: 10px;">-125</div>
           <div class="inputbox">
             <i class="fa fa-usd" aria-hidden="true"></i>
             <input type="number" placeholder="0.00">
@@ -29,7 +29,7 @@
       </div>
       <div class="betcard">
         <div class="flex" style="align-items: baseline;">
-          <div style="cursor: pointer;"><i class="fa fa-times" aria-hidden="true"></i></div>
+          <div style="cursor: pointer; padding-left: 10px;"><i class="fa fa-times" aria-hidden="true"></i></div>
           <div style="text-align: left;">
             <div class="betcard-header">Man City</div>
             <div>Moneyline</div>
@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="flex" style="align-items: baseline;">
-          <div style="font-weight: bold;">-125</div>
+          <div style="font-weight: bold; padding-right: 10px;">-125</div>
           <div class="inputbox">
             <i class="fa fa-usd" aria-hidden="true"></i>
             <input type="number" placeholder="0.00">

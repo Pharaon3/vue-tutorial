@@ -5,7 +5,6 @@
       <div id="sidebar">
         <!-- <SideBar id="sidebar" /> -->
         <sidebar-menu :menu="sidebar" />
-        <i class="fa fa-futbol-o" aria-hidden="true"></i>
       </div>
       <div class="col-8">
         <MainPage id="mainpage" />

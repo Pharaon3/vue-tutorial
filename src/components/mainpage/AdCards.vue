@@ -37,6 +37,7 @@ export default {
 .card-header-left-slogan {
   color: green;
 }
+
 .main-table-roundButton {
   padding: 7px 20px;
   cursor: pointer;
@@ -113,6 +114,7 @@ export default {
   border-radius: 10px;
   padding: 10px 40px;
   cursor: pointer;
+  margin: 10px;
 }
 
 .card-header-left {
@@ -120,6 +122,7 @@ export default {
   text-align: left;
   padding-left: 20px;
   text-transform: uppercase;
+  font-size: 16px;
 }
 
 .link {
@@ -148,8 +151,28 @@ export default {
 }
 
 .AdHeader {
-  height: 300px;
+  padding: 30px;
   background-color: #444;
   background-image: url("../../../public/img/card-header-bg.png");
-  background-size: cover; /* Adjust as needed */
-}</style>
+  background-size: cover;
+  /* Adjust as needed */
+}
+
+@media (max-width: 789px) {
+
+  .card-header-left {
+    font-size: 12px;
+  }
+
+  .AdHeader {
+    padding: 10px;
+  }
+
+  .roundButton {
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 2px;
+  }
+
+}
+</style>

@@ -47,22 +47,26 @@ export default {
   cursor: pointer;
   font-size: 14px;
 }
+
 .moneyLine-table {
   background-color: #222;
   margin: 15px;
   padding: 10px;
   text-align: left;
 }
+
 .moneyLine {
   background-color: #222;
   padding: 15px;
   margin: 15px;
   text-align: left;
 }
+
 .mainTableHeader {
   margin-top: 30px;
   background-color: black;
 }
+
 .main-table-roundButton {
   padding: 7px 20px;
   cursor: pointer;
@@ -73,6 +77,9 @@ export default {
   border-radius: 40px;
   border-color: #888;
   margin: 5px;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
 }
 
 .main-table-roundButton:hover {
@@ -89,8 +96,18 @@ export default {
 .main-table-header:hover {
   color: #eee;
 }
+
 .active {
   color: white;
   border-color: white;
+}
+
+@media (max-width: 789px) {
+
+  .main-table-roundButton {
+    padding: 2px 10px;
+    margin: 2px;
+    margin-top: 15px;
+  }
 }
 </style>
