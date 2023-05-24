@@ -1,16 +1,18 @@
 <template>
-  <div id="app">
+  <div>
     <!-- <h1 class="header">EZ <span style="color: yellow;">LIVE</span></h1> -->
     <!-- <ToDoForm :plabel="newLabel" @todo-added="addToDo" /> -->
     <Header id="header" />
-    <div class="row">
-      <div style="width: 15%">
-        <SideBar id="sidebar" />
+    <div id="content" class="row">
+      <div id="sidebar">
+        <!-- <SideBar id="sidebar" /> -->
+        <sidebar-menu :menu="sidebar" />
+        <i class="fa fa-futbol-o" aria-hidden="true"></i>
       </div>
-      <div style="width: 55%">
-        <MainPage id="mainpage"/>
+      <div class="col-8">
+        <MainPage id="mainpage" />
       </div>
-      <div style="width: 30%">
+      <div class="col-4">
         <BetSlip />
       </div>
     </div>
@@ -19,7 +21,7 @@
 
 <script>
 import uniqueId from "lodash.uniqueid";
-import SideBar from "./components/SideBar.vue";
+// import SideBar from "./components/SideBar.vue";
 import MainPage from "./components/MainPage.vue";
 import Header from "./components/Header.vue";
 import BetSlip from "./components/BetSlip.vue";
@@ -27,7 +29,7 @@ import BetSlip from "./components/BetSlip.vue";
 export default {
   name: "App",
   components: {
-    SideBar,
+    // SideBar,
     MainPage,
     Header,
     BetSlip,
@@ -97,6 +99,72 @@ export default {
           ],
         },
       ],
+      sidebar: [
+        {
+          header: 'EZ Live',
+          hiddenOnCollapse: true,
+        },
+        {
+          // href: '/Popular',
+          title: 'Popular',
+          // icon: 'fa fa-user',
+          icon: 'fa fa-users',
+          child: [
+            {
+              href: '/Popular/NHL',
+              title: 'NHL',
+            },
+            {
+              href: '/Popular/MLB',
+              title: 'MLB',
+            },
+            {
+              href: '/Popular/NFL',
+              title: 'NFL',
+            },
+            {
+              href: '/Popular/FOQ',
+              title: 'French Open Qual.(M)',
+            },
+            {
+              href: '/Popular/Boxing',
+              title: 'Boxing',
+            },
+          ],
+        },
+        {
+          href: '/SportsTeams',
+          title: 'Sports teams',
+          icon: 'fa',
+        },
+        {
+          // href: '/AZSports',
+          title: 'A-Z Sports',
+          icon: 'fa fa-bars',
+          child: [
+            {
+              href: '/AZSports/aussierules',
+              title: 'aussie rules',
+            },
+            {
+              href: '/AZSports/baseball',
+              title: 'baseball',
+            },
+            {
+              href: '/AZSports/basketball',
+              title: 'basketball',
+            },
+            {
+              href: '/AZSports/boxing',
+              title: 'boxing',
+            },
+            {
+              href: '/AZSports/COQ',
+              title: 'cricket Open Qual.(M)',
+            },
+          ],
+        },
+      ],
     };
   },
   methods: {
@@ -117,9 +185,11 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+
 .col-4 {
   width: 33%;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -129,12 +199,46 @@ export default {
   margin-top: 60px;
   background-color: #000;
 }
+
 #app {
-  /* background: #fff; */
-  margin: 2rem 0 4rem 0;
-  padding: 1rem;
-  padding-top: 0;
-  position: relative;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+  margin: 0px;
 }
-</style>
+
+.v-sidebar-menu {
+  position: relative !important;
+  ;
+}
+
+.col-6 {
+  width: 50%;
+}
+.col-8 {
+  width: 67%;
+}
+.col-4 {
+  width: 33%;
+}
+
+@media (max-width: 1400px) {
+  .col-6 {
+    width: 100%;
+  }
+  .col-8 {
+    width: 100%;
+  }
+  .col-4 {
+    width: 100%;
+  }
+
+  .row {
+    display: block;
+  }
+
+  .v-sidebar-menu {
+    position: fixed !important;
+    top: 80px !important;
+  }
+  #content {
+    margin-left: 65px;
+  }
+}</style>

@@ -123,9 +123,10 @@ export default {
 };
 </script>
 <style>
-.sidebar-menus{
+.sidebar-menus {
   margin-bottom: 20px;
 }
+
 .sidebar-menu {
   text-align: left;
 }
@@ -138,6 +139,7 @@ export default {
   font-size: 14px;
   cursor: pointer;
 }
+
 .sidebar-menu div:hover {
   background-color: #555;
 }
@@ -153,6 +155,7 @@ export default {
   padding-bottom: 5px;
   cursor: pointer;
 }
+
 .sidebar-title:hover {
   color: #58d7af;
   background-color: #555;
