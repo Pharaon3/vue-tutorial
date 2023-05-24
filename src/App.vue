@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!-- <h1 class="header">EZ <span style="color: yellow;">LIVE</span></h1> -->
-    <!-- <ToDoForm :plabel="newLabel" @todo-added="addToDo" /> -->
     <Header id="header" />
     <div id="content" class="row">
       <div id="sidebar">
