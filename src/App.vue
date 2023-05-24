@@ -9,44 +9,16 @@
       </div>
       <div style="width: 55%">
         <MainPage id="mainpage"/>
-        <!-- <ul class="col-4">
-          <li v-for="item in ToDoItems" :key="item.id">
-            <ThreeWay
-              :id="item.id"
-              :label="item.label"
-              :leftTitle="item.leftTitle"
-              :middleTitle="item.middleTitle"
-              :rightTitle="item.rightTitle"
-              :leftAmount="item.leftAmount"
-              :middleAmount="item.middleAmount"
-              :rightAmount="item.rightAmount"
-              :done="item.done"
-            />
-          </li>
-          <li v-for="item in ThreeWayTables" :key="item.id">
-            <ThreeWayTable
-              :id="item.id"
-              :title="item.title"
-              :currentCorners="item.currentCorners"
-              :corners="JSON.stringify(item.corners)"
-            />
-          </li>
-        </ul> -->
       </div>
       <div style="width: 30%">
         <BetSlip />
       </div>
     </div>
-    <!-- <h2>{{ ToDoItems.filter(item => item.done).length }} items completed out of {{ ToDoItems.length }}. </h2> -->
   </div>
 </template>
 
 <script>
-// import ToDoItem from "./components/ToDoItem.vue";
 import uniqueId from "lodash.uniqueid";
-// import ToDoForm from "./components/ToDoForm.vue";
-// import ThreeWay from "./components/ThreeWay.vue";
-// import ThreeWayTable from "./components/ThreeWayTable.vue";
 import SideBar from "./components/SideBar.vue";
 import MainPage from "./components/MainPage.vue";
 import Header from "./components/Header.vue";
@@ -55,8 +27,6 @@ import BetSlip from "./components/BetSlip.vue";
 export default {
   name: "App",
   components: {
-    // ThreeWay,
-    // ThreeWayTable,
     SideBar,
     MainPage,
     Header,
